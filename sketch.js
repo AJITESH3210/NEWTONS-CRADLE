@@ -15,13 +15,15 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
+	roof = new Roof(400,100,600,30);
+
 	bobObject1 = new Bob(240, 500);
 	bobObject2 = new Bob(325,500);
 	bobObject3 = new Bob(410,500);
 	bobObject4 = new Bob(495,500);
 	bobObject5 = new Bob(580,500);
 
-	roof = new Roof(400,100,600,30);
+	
 	
 	rope1 = new Rope(bobObject1.body, roof.body, -157, 0);
 	rope2 = new Rope(bobObject2.body, roof.body, -76, 0);
@@ -57,6 +59,6 @@ function draw() {
 
 function keyPressed(){
     if(keyCode === LEFT_ARROW) {
-        Matter.Body.applyForce(bobObject1.body, rope1.body,{x : 85 , y : -85 })
+        Matter.Body.applyForce(bobObject1.body, bobObject1.body.position,{x : -85 , y : -85 })
     }
 }
