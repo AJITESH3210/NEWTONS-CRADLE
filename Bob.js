@@ -2,13 +2,13 @@ class Bob {
     constructor(x, y,) {
         var options = { 
           'isStatic' : false,
-          'restitution':0.3,
+          'restitution':1,
           'friction':0.5,
           'density':0.105
         }
-        this.body = Bodies.circle(x, y, 85, options);
-        this.width = 85;
-        this.height = 85;
+        this.body = Bodies.circle(x, y, 40, options);
+        this.width = 80;
+        this.height = 80;
         this.bodyDiameter = 85;
        // this.image = loadImage("paper.png");
         World.add(world, this.body);
